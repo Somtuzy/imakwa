@@ -1,0 +1,17 @@
+.background{
+  background: url(../assets/images/bg.jpg) no-repeat;
+  background-size: cover
+}
+
+@media (max-width: 465px) {
+  .btn-add {
+    position:absolute;
+    bottom: 5%;
+    right: 10%;
+    background: #198754;
+    color: #ffffff;
+    border-radius: 50%;
+    border: none;
+    font-size: 1rem
+  }
+}

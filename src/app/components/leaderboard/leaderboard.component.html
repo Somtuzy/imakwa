@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="card">
+    <div class="card-head">
+      <h4 class="text-center mt-2">The Leaderboard</h4>
+    </div>
+    <div class="card-body table-responsive">
+      <table datatable [dtOptions]="dtOptions" class="table row-border hover text-center">
+        <thead class="bg-teal">
+          <tr>
+            <th>#</th>
+            <th></th>
+            <th><fa-icon [icon]="faIcons.user"></fa-icon></th>
+            <th>POINTS</th>
+            <th><fa-icon class="fa-spin" [icon]="faIcons.cog"></fa-icon>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of playerRankings">
+            <td></td>
+            <td>
+              <img
+                src="{{player.profile_image}}"
+                alt="emoji" width="24" height="24">
+            </td>
+            <td class="text-capitalize">{{player.username}}</td>
+            <td>{{player.score}}</td>
+            <td>
+              <a title="Edit player"
+                class="btn btn-primary btn-sm mx-1"
+                routerLink="/player/{{player.player_id}}">
+                <fa-icon [icon]="faIcons.pen"></fa-icon>
+              </a>
+              <button 
+                title="Delete" class="btn btn-danger btn-sm mx-1">
+                <fa-icon [icon]="faIcons.delete"></fa-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot class="bg-teal">
+          <tr>
+            <td>#</td>
+            <td></td>
+            <th><fa-icon [icon]="faIcons.user"></fa-icon></th>
+            <td>POINTS</td>
+            <td><fa-icon class="fa-spin" [icon]="faIcons.cog"></fa-icon>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
