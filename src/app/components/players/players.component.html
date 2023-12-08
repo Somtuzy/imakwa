@@ -7,18 +7,24 @@
       <div class="card-body p-2">
         <form (ngSubmit)="addPlayer(playerForm)" #playerForm="ngForm">
           <mat-form-field class="col-6">
-            <mat-label>Username</mat-label>
-            <input matInput matNativeControl name="username" #username ngModel required />
+            <mat-label for="username">Username</mat-label>
+            <input 
+              matInput matNativeControl 
+              name="username" id="username" 
+              #username ngModel required />
           </mat-form-field>
 
           <mat-form-field class="col-6">
             <mat-label>Phone Number</mat-label>
-            <input matNativeControl matInput name="telephone" #telphone ngModel required />
+            <input 
+              matNativeControl matInput id="telephone" 
+              name="telephone" #telphone 
+              ngModel required />
           </mat-form-field>
 
           <mat-form-field class="col-6">
-            <mat-label>Gender</mat-label>
-            <mat-select name="gender" #gender ngModel>
+            <mat-label for="gender">Gender</mat-label>
+            <mat-select id="gender" name="gender" #gender ngModel>
               <mat-option value="Male">Male</mat-option>
               <mat-option value="Female">Female</mat-option>
               <mat-option value="LGBT">LGBT</mat-option>
@@ -27,9 +33,10 @@
           </mat-form-field>
 
           <mat-form-field class="col-6">
-            <mat-label>Score</mat-label>
+            <mat-label for="score">Score</mat-label>
             <input matInput 
-              type="number" ngModel 
+              type="number" ngModel
+              id="score"
               name="score"
               disabled="true"
               #score ngModel />
