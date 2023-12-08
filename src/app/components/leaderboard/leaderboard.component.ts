@@ -1,8 +1,6 @@
-import { Component, Injectable, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { faCog, faPen, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
 import { LeaderboardService } from '../../services/leaderboard.service';
-import { PlayersComponent } from '../players/players.component';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-leaderboard',
@@ -10,14 +8,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './leaderboard.component.scss'
 })
 
-
-@Injectable({
-  providedIn: 'root'
-})
-
 export class LeaderboardComponent implements OnInit {
 
-  playerRankings: any = [];
+  playerRankings:any = [{
+    username: '',
+    score: '',
+    _id: '',
+    email: '',
+    profile_image: ''
+  }];
 
   faIcons = {
     cog: faCog,
@@ -26,8 +25,7 @@ export class LeaderboardComponent implements OnInit {
     user: faUser
   }
 
-  constructor(private leaderboard: LeaderboardService, 
-    private route: ActivatedRoute, private player: PlayersComponent) { };
+  constructor(private leaderboard: LeaderboardService) { };
 
   ngOnInit(): void {
 
@@ -35,16 +33,10 @@ export class LeaderboardComponent implements OnInit {
     this.getScores();
   };
 
-
   // Get rankings
   getScores() {
     this.leaderboard.getRanking().subscribe((res: any) => {
       this.playerRankings = res.data.registered_players;
     });
   };
-
-  // Edit player
-  // viewPlayer(username: any){
-  //   this.player.getPlayer(this.route.snapshot.paramMap.get(`${username}`));
-  // }
 }

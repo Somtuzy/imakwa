@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BannerComponent } from './components/banner/banner.component';
-import { PlayersComponent } from './components/players/players.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'player/:username',
-    component: PlayersComponent
+    component: EditProfileComponent
   }
 ];
 
