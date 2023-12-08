@@ -5,40 +5,51 @@
         <h4>Add Player</h4>
       </div>
       <div class="card-body p-2">
-        <form (ngSubmit)="addPlayer(playerForm)" #playerForm="ngForm">
+        <form (ngSubmit)="addPlayer(playerForm.value)" #playerForm="ngForm">
           <mat-form-field class="col-6">
             <mat-label for="username">Username</mat-label>
             <input 
               matInput matNativeControl 
-              name="username" id="username" 
+              name="username" id="username" value={{playerData.username}}
               #username ngModel required />
           </mat-form-field>
 
           <mat-form-field class="col-6">
-            <mat-label>Phone Number</mat-label>
+            <mat-label for="telephone">Phone Number</mat-label>
             <input 
               matNativeControl matInput id="telephone" 
-              name="telephone" #telphone 
+              name="phone_number" #phone_number
+              value={{playerData.phone_number}}
               ngModel required />
+          </mat-form-field>  
+
+          <mat-form-field class="col-12">
+            <mat-label for="email">Email</mat-label>
+            <input matInput 
+              type="email" ngModel
+              id="email"
+              name="email"
+              value={{playerData.email}}
+              #email />
+
           </mat-form-field>
 
           <mat-form-field class="col-6">
             <mat-label for="gender">Gender</mat-label>
             <mat-select id="gender" name="gender" #gender ngModel>
-              <mat-option value="Male">Male</mat-option>
-              <mat-option value="Female">Female</mat-option>
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
               <mat-option value="LGBT">LGBT</mat-option>
               <mat-option value="I\'d Rather Not Say">I'd Rather Not Say</mat-option>
             </mat-select>
           </mat-form-field>
 
-          <mat-form-field class="col-6">
+          <mat-form-field class="col-6" *ngIf="isUpdate" >
             <mat-label for="score">Score</mat-label>
             <input matInput 
-              type="number" ngModel
-              id="score"
+              type="text" ngModel
+              id="score" value={{playerData.score}}
               name="score"
-              disabled="true"
               #score ngModel />
           </mat-form-field>
           
@@ -52,7 +63,7 @@
             <button
               type="submit"
               color="primary"
-              mat-raised-button>SAVE
+              mat-raised-button>{{buttonTitle}}
             </button>
 
           </div>

@@ -1,11 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit} from '@angular/core';
 import { faCog, faPen, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
 import { LeaderboardService } from '../../services/leaderboard.service';
+import { PlayersComponent } from '../players/players.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-leaderboard',
   templateUrl: './leaderboard.component.html',
   styleUrl: './leaderboard.component.scss'
+})
+
+
+@Injectable({
+  providedIn: 'root'
 })
 
 export class LeaderboardComponent implements OnInit {
@@ -19,7 +26,8 @@ export class LeaderboardComponent implements OnInit {
     user: faUser
   }
 
-  constructor(private leaderboard: LeaderboardService) { };
+  constructor(private leaderboard: LeaderboardService, 
+    private route: ActivatedRoute, private player: PlayersComponent) { };
 
   ngOnInit(): void {
 
@@ -34,4 +42,9 @@ export class LeaderboardComponent implements OnInit {
       this.playerRankings = res.data.registered_players;
     });
   };
+
+  // Edit player
+  // viewPlayer(username: any){
+  //   this.player.getPlayer(this.route.snapshot.paramMap.get(`${username}`));
+  // }
 }

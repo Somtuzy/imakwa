@@ -9,7 +9,9 @@ import { LeaderboardService } from './leaderboard.service';
 
 export class PlayerService {
 
-  constructor(private http:HttpClient, private BASE_URL: LeaderboardService) { }
+  constructor(private http: HttpClient, private BASE_URL: LeaderboardService) { };
+
+  username: any;
 
   /**
    * Creates a player
@@ -17,18 +19,22 @@ export class PlayerService {
    * @param {Object } player - Form input
    * @returns 
    */
-  create(player:object){
+  create(player: any) {
     return this.http.post(`${this.BASE_URL.baseUrl}/players/create`, player);
   };
 
-/**
- * Update player profile
- * @param {Object} player - Form input
- * @returns 
- */
-  update(player:any){
-    return this.http.patch(`${this.BASE_URL.baseUrl}/${player.username}/edit`, player);
+  /**
+   * Update player profile
+   * @param {Object} player - Form input
+   * @returns 
+   */
+  update(player: any, username: any) {
+    return this.http.patch(`${this.BASE_URL.baseUrl}/players/${username}/edit`, player);
   }
 
+  // Player profile
+  profile(username: any) {
+    return this.http.get(`${this.BASE_URL.baseUrl}/players/${username}`);
+  }
 
-};
+}
