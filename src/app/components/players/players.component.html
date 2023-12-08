@@ -1,1 +1,60 @@
-<p>players works!</p>
+<div class="container mt-2">
+  <div class="">
+    <div class="card bg-light">
+      <div class="card-head mt-2 text-center">
+        <h4>Add Player</h4>
+      </div>
+      <div class="card-body p-2">
+        <form (ngSubmit)="addPlayer(playerForm)" #playerForm="ngForm">
+          <mat-form-field class="col-6">
+            <mat-label>Username</mat-label>
+            <input matInput matNativeControl name="username" #username ngModel required />
+          </mat-form-field>
+
+          <mat-form-field class="col-6">
+            <mat-label>Phone Number</mat-label>
+            <input matNativeControl matInput name="telephone" #telphone ngModel required />
+          </mat-form-field>
+
+          <mat-form-field class="col-6">
+            <mat-label>Gender</mat-label>
+            <mat-select name="gender" #gender ngModel>
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+              <mat-option value="LGBT">LGBT</mat-option>
+              <mat-option value="I\'d Rather Not Say">I'd Rather Not Say</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="col-6">
+            <mat-label>Score</mat-label>
+            <input matInput 
+              type="number" ngModel 
+              name="score"
+              disabled="true"
+              #score ngModel />
+          </mat-form-field>
+          
+          <div class="d-flex justify-content-between">
+              <button 
+                mat-button
+                mat-dialog-close>
+                CANCEL
+              </button>
+
+            <button
+              type="submit"
+              color="primary"
+              mat-raised-button>SAVE
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

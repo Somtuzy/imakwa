@@ -12,8 +12,6 @@ export class LeaderboardComponent implements OnInit {
 
   playerRankings: any = [];
 
-  dtOptions: DataTables.Settings = {};
-
   faIcons = {
     cog: faCog,
     pen: faPen,
@@ -24,11 +22,6 @@ export class LeaderboardComponent implements OnInit {
   constructor(private leaderboard: LeaderboardService) { };
 
   ngOnInit(): void {
-
-    // Initializing table utils
-    this.dtOptions = {
-      pagingType: 'full_numbers'
-    };
 
     // Refresh leaderboard
     this.getScores();

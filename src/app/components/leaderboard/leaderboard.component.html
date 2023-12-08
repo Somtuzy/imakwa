@@ -4,8 +4,8 @@
       <h4 class="text-center mt-2">The Leaderboard</h4>
     </div>
     <div class="card-body table-responsive">
-      <table datatable [dtOptions]="dtOptions" class="table row-border hover text-center">
-        <thead class="bg-teal">
+      <table class="table text-center table-striped">
+        <thead class="table-secondary">
           <tr>
             <th>#</th>
             <th></th>
@@ -15,9 +15,9 @@
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr *ngFor="let player of playerRankings">
-            <td></td>
+        <tbody class="table-hover">
+          <tr *ngFor="let player of playerRankings; let i=index;">
+            <td>{{i + 1}}</td>
             <td>
               <img
                 src="{{player.profile_image}}"
@@ -38,7 +38,7 @@
             </td>
           </tr>
         </tbody>
-        <tfoot class="bg-teal">
+        <tfoot class="table-secondary">
           <tr>
             <td>#</td>
             <td></td>

@@ -5,7 +5,7 @@
 
 @media (max-width: 465px) {
   .btn-add {
-    position:absolute;
+    position:fixed;
     bottom: 5%;
     right: 10%;
     background: #198754;
@@ -14,4 +14,5 @@
     border: none;
     font-size: 1rem
   }
+  .btn-add p{display:none}
 }
