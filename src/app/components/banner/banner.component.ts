@@ -7,16 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  slideConfig = {
-    autoplay:true,
-    arrows: true,
-    infinite: true,
-    autoplaySpeed: 10000,
-    dots: false,
-    fade:true
-  }
-
-
   ngOnInit(): void {
 
   };

@@ -16,7 +16,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { BannerComponent } from './components/banner/banner.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 
@@ -43,7 +42,6 @@ import { CommonModule } from '@angular/common';
     MatDialogClose,
     MatDialogContent,
     FormsModule,
-    SlickCarouselModule,
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
