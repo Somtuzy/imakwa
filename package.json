@@ -28,6 +28,7 @@
     "datatables.net": "^1.11.3",
     "datatables.net-bs5": "^1.11.3",
     "jquery": "^3.6.0",
+    "ngx-slick-carousel": "^17.0.0",
     "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
