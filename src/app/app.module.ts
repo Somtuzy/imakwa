@@ -18,13 +18,15 @@ import { FormsModule } from '@angular/forms';
 import { BannerComponent } from './components/banner/banner.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LeaderboardComponent,
     PlayersComponent,
-    BannerComponent
+    BannerComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
